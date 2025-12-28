@@ -85,39 +85,39 @@
 <section>
     <h2>How to Run the Project</h2>
 
-    <h3>Step 1</h3>
-    <p>Clone the repository:</p>
-    <code>git clone https://github.com/your-username/Sorting-Algorithm-Visualizer.git</code>
+    Step 1
+    Clone the repository:
+    git clone https://github.com/your-username/Sorting-Algorithm-Visualizer.git
 
-    <h3>Step 2</h3>
-    <p>Open the project in any Java IDE:</p>
-    <ul>
-        <li>IntelliJ IDEA</li>
-        <li>Eclipse</li>
-        <li>NetBeans</li>
-    </ul>
+    Step 2
+    Open the project in any Java IDE:</p>
+    
+        IntelliJ IDEA
+        Eclipse
+        NetBeans
+    
 
-    <h3>Step 3</h3>
-    <p>Make sure JDK 8 or higher is installed.</p>
+    Step 3
+    Make sure JDK 8 or higher is installed.
 
-    <h3>Step 4</h3>
-    <p>Run the following file:</p>
-    <code>NeonSortStudio.java</code>
+    Step 4<
+    Run the following file:
+    NeonSortStudio.java
 </section>
 
 <section>
-    <h2>Controls Guide</h2>
+     <h2>Controls Guide</h2>
 
-    <ul>
-        <li><b>Algorithm Selector:</b> Choose the sorting algorithm</li>
-        <li><b>Speed Slider:</b> Control animation speed</li>
-        <li><b>Play:</b> Start sorting</li>
-        <li><b>Pause / Resume:</b> Pause or continue sorting</li>
-        <li><b>Reset:</b> Clear and reset visualization</li>
-        <li><b>Input Field:</b> Add custom numbers</li>
-        <li><b>Randomize:</b> Generate random values</li>
-        <li><b>View Toggle:</b> Switch between node and bar view</li>
-    </ul>
+    
+        Algorithm Selector: Choose the sorting algorithm
+        Speed Slider: Control animation speed
+        Play: Start sorting
+        Pause / Resume: Pause or continue sorting
+        Reset: Clear and reset visualization
+        Input Field: Add custom numbers
+        Randomize: Generate random values
+        View Toggle: Switch between node and bar view
+    
 </section>
 
 <section>
@@ -131,8 +131,8 @@
   bars-view.png
     </pre>
 
-    <p>Example:</p>
-    <code>![Sorting View](screenshots/sorting.png)</code>
+     Example:
+    ![Sorting View](screenshots/sorting.png)
 </section>
 
 <section>
