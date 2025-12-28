@@ -1,191 +1,227 @@
 # Sorting-Visualization
-Sorting Algorithm Visualizer in Java (Swing)
-
-NeonSortStudio is a desktop-based sorting algorithm visualizer built using Java Swing.
-It helps students understand how different sorting algorithms work through real-time animations, color indicators, pointers, and live statistics.
-
-The project focuses on clarity, interaction, and visual learning rather than just showing final sorted output.
-
-Features
-
-Visualizes multiple sorting algorithms step by step
-
-Smooth animated movement using simple physics
-
-Real-time comparison and swap counters
-
-Time complexity display for each algorithm
-
-Pause and resume sorting at any time
-
-Adjustable speed control
-
-Two view modes
-
-Node view (circular nodes)
-
-Bar view (histogram style)
-
-Manual input or random array generation
-
-Clean dark themed user interface
-
-Algorithms Implemented
-
-Merge Sort
-
-Quick Sort
-
-Insertion Sort
-
-Selection Sort
-
-Bubble Sort
-
-Each algorithm shows:
-
-Active comparisons
-
-Swaps
-
-Current pointers (i, j, pivot, key)
-
-Final sorted state highlighted clearly
-
-Technologies Used
-
-Java
-
-Java Swing (GUI)
-
-AWT Graphics2D
-
-Multithreading (for sorting without freezing UI)
-
-How It Works (High Level)
-
-Each number is represented as a VisualNode
-
-Nodes move smoothly toward target positions using simple interpolation
-
-Sorting runs in a separate thread to keep the UI responsive
-
-Pause and resume is handled using a shared lock
-
-Comparisons and swaps are counted live and updated on screen
-
-Different colors represent different states:
-
-Default
-
-Comparing
-
-Pivot or key
-
-Sorted
-
-How to Run the Project
-
-Clone the repository
-
-git clone https://github.com/your-username/NeonSortStudio.git
-
-
-Open the project in any Java IDE
-(IntelliJ IDEA, Eclipse, NetBeans)
-
-Make sure JDK 8 or higher is installed
-
-Run the file:
-
-NeonSortStudio.java
-
-Controls Guide
-
-Algorithm Selector
-Choose the sorting algorithm
-
-Speed Slider
-Control animation delay
-
-Play
-Start sorting
-
-Pause / Resume
-Pause or continue the algorithm
-
-Reset
-Reset colors and counters
-
-Input Field
-Add custom values (comma separated)
-
-Randomize
-Generate random array
-
-View Toggle
-Switch between Nodes and Bars view
-
-Educational Purpose
-
-This project is designed for:
-
-Computer Science students
-
-Data Structures and Algorithms learning
-
-Visual understanding of sorting behavior
-
-Demonstrating multithreading and GUI concepts in Java
-
-It is especially useful for beginners who struggle to understand sorting logic through code alone.
-
-Project Structure (Main Classes)
-
-NeonSortStudio
-Main application window and controller
-
-VisualNode
-Represents each array element visually
-
-CanvasPanel
-Responsible for drawing animations and pointers
-
-Screenshots (Optional but Recommended)
-
-You should add screenshots here for GitHub:
-
-Intro Screen
-
-Sorting in Node View
-
-Sorting in Bar View
-
-Merge Sort recursion visualization
-
-Example:
-
-![Sorting Visualization](screenshots/sort.png)
-
-Future Improvements
-
-Add Heap Sort and Radix Sort
-
-Step-by-step manual mode
-
-Sound effects for swaps and comparisons
-
-Export sorting steps as data
-
-Better mobile scaling
-
-Author
-
-Saifullah Khan Jadoon
-Computer Science Student
-Sorting Algorithm Visualizer Project
-
-License
-
-This project is open for educational use.
-You may modify and reuse it with proper credit.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeonSortStudio - Sorting Algorithm Visualizer</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #0f1115;
+            color: #e6e6e6;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #161a20;
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 2px solid #2a2f38;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #00e0a8;
+        }
+
+        h2 {
+            color: #4fc3f7;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: #f5c16c;
+        }
+
+        p {
+            max-width: 900px;
+            margin: 10px auto;
+            font-size: 16px;
+        }
+
+        section {
+            padding: 30px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        ul {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        code {
+            background: #1c1f26;
+            padding: 4px 6px;
+            border-radius: 4px;
+            color: #9cdcfe;
+        }
+
+        .box {
+            background: #1a1e24;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #2f3542;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #2a2f38;
+            margin-top: 40px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>NeonSortStudio</h1>
+    <p>Sorting Algorithm Visualizer using Java Swing</p>
+</header>
+
+<section>
+    <h2>Project Overview</h2>
+    <p>
+        NeonSortStudio is a desktop-based sorting algorithm visualizer built using Java Swing.
+        It helps students understand how sorting algorithms work through animations,
+        color indicators, and real-time statistics.
+    </p>
+
+    <p>
+        This project focuses on clarity, interaction, and learning rather than just showing
+        the final sorted result.
+    </p>
+</section>
+
+<section>
+    <h2>Features</h2>
+    <ul>
+        <li>Visual animation of sorting algorithms</li>
+        <li>Live comparison and swap counters</li>
+        <li>Pause and resume functionality</li>
+        <li>Speed control for animations</li>
+        <li>Node view and bar view modes</li>
+        <li>Manual input or random data generation</li>
+        <li>Clean and modern dark theme interface</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Supported Algorithms</h2>
+    <ul>
+        <li>Merge Sort</li>
+        <li>Quick Sort</li>
+        <li>Insertion Sort</li>
+        <li>Selection Sort</li>
+        <li>Bubble Sort</li>
+    </ul>
+
+    <p>
+        Each algorithm shows comparisons, swaps, pointers, and final sorted order.
+    </p>
+</section>
+
+<section>
+    <h2>Technologies Used</h2>
+    <ul>
+        <li>Java</li>
+        <li>Java Swing (GUI)</li>
+        <li>AWT Graphics</li>
+        <li>Multithreading</li>
+    </ul>
+</section>
+
+<section>
+    <h2>How It Works</h2>
+    <div class="box">
+        <ul>
+            <li>Each value is represented as a visual node.</li>
+            <li>Nodes move smoothly using position interpolation.</li>
+            <li>Sorting runs on a separate thread to keep the UI responsive.</li>
+            <li>Colors show comparisons, swaps, pivots, and sorted elements.</li>
+            <li>Statistics update in real time during execution.</li>
+        </ul>
+    </div>
+</section>
+
+<section>
+    <h2>How to Run the Project</h2>
+    <div class="box">
+        <p>1. Clone the repository:</p>
+        <code>git clone https://github.com/your-username/NeonSortStudio.git</code>
+
+        <p>2. Open the project in any Java IDE (IntelliJ, Eclipse, NetBeans).</p>
+
+        <p>3. Make sure JDK 8 or higher is installed.</p>
+
+        <p>4. Run the file:</p>
+        <code>NeonSortStudio.java</code>
+    </div>
+</section>
+
+<section>
+    <h2>Controls Guide</h2>
+    <ul>
+        <li><b>Algorithm Selector:</b> Choose the sorting method</li>
+        <li><b>Speed Slider:</b> Control animation speed</li>
+        <li><b>Play:</b> Start sorting</li>
+        <li><b>Pause / Resume:</b> Pause or continue sorting</li>
+        <li><b>Reset:</b> Reset array and counters</li>
+        <li><b>Input Field:</b> Enter custom values</li>
+        <li><b>Randomize:</b> Generate random data</li>
+        <li><b>View Toggle:</b> Switch between nodes and bars</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Educational Purpose</h2>
+    <p>
+        This project is designed for computer science students who want to understand
+        sorting algorithms visually. It is useful for learning data structures,
+        algorithm behavior, and GUI-based programming.
+    </p>
+</section>
+
+<section>
+    <h2>Future Improvements</h2>
+    <ul>
+        <li>Add Heap Sort and Radix Sort</li>
+        <li>Step-by-step execution mode</li>
+        <li>Sound effects for swaps</li>
+        <li>Export sorting steps</li>
+        <li>Better scaling for small screens</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Author</h2>
+    <p>
+        <b>Saifullah Khan Jadoon</b><br>
+        Computer Science Student<br>
+        Sorting Algorithm Visualizer Project
+    </p>
+</section>
+
+<section>
+    <h2>License</h2>
+    <p>
+        This project is open for educational use.  
+        You may modify and reuse it with proper credit.
+    </p>
+</section>
+
+<footer>
+    <p>© 2025 NeonSortStudio</p>
+</footer>
+
+</body>
+</html>
