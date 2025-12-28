@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sorting Algorithm Visualizer</title>
+    
 
 </head>
 
@@ -122,14 +122,14 @@
 
 <section>
     <h2>Screenshots</h2>
-    <p>You can add screenshots like this:</p>
+    
 
-    <pre>
-/screenshots/
-  intro.png
-  sorting.png
-  bars-view.png
-    </pre>
+    
+    /screenshots/
+      intro.png
+      sorting.png
+      bars-view.png
+    
 
      Example:
     ![Sorting View](screenshots/sorting.png)
